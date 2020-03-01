@@ -1,11 +1,13 @@
 # Python/Flask tutorial sample for Visual Studio Code
 
 * This sample contains the completed program from the tutorial, make sure to visit the link: [Using Flask in Visual Studio Code](https://code.visualstudio.com/docs/python/tutorial-flask). Intermediate steps are not included.
-* It also contains the Dockerfile and uwsgi.ini files necessary to build a container with a production server. The resulting image works both locally and when deployed to Azure App Service. See [Deploy Python using Docker containers](https://code.visualstudio.com/docs/python/tutorial-deploy-containers).
+* This application is ready to be Dockerized and run in a container. For steps, see [Python in containers](https://code.visualstudio.com/docs/python/tutorial-deploy-containers).
 
-## Navigation
+To run the sample:
 
-The `startup.py` file, for its part, is specifically for deploying to Azure App Service on Linux without containers. Because the app code is in its own *module* in the `hello_app` folder (which has an `__init__.py`), trying to start the Gunicorn server within App Service on Linux produces an "Attempted relative import in non-package" error. The `startup.py` file, therefore, is just a shim to import the app object from the `hello_app` module, which then allows you to use startup:app in the Gunicorn command line (see `startup.txt`).
+1. In VS Code Terminal, run `python -m venv env` to create a virtual environment as described in the tutorial.
+2. Press Ctrl + Shift + P and run command `Python: Select Interpreter`.
+3. From Run and Debug section, select `Python: Flask` task and hit F5.
 
 ## Contributing
 
