@@ -16,7 +16,7 @@
       "args": [
         "run",
         "--no-debugger",
-        "--no-reload"   // Remove to auto-reload modified pages
+        "--no-reload"
       ]
     },
     {
@@ -32,7 +32,10 @@
       "name": "Python: Attach",
       "type": "python",
       "request": "attach",
+      "localRoot": "${workspaceFolder}",
+      "remoteRoot": "${workspaceFolder}",
       "port": 3000,
+      "secret": "my_secret",
       "host": "localhost"
     }
   ]

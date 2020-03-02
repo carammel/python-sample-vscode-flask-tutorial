@@ -1,13 +1,15 @@
 # Python/Flask tutorial sample for Visual Studio Code
 
 * This sample contains the completed program from the tutorial, make sure to visit the link: [Using Flask in Visual Studio Code](https://code.visualstudio.com/docs/python/tutorial-flask). Intermediate steps are not included.
-* This application is ready to be Dockerized and run in a container. For steps, see [Python in containers](https://code.visualstudio.com/docs/python/tutorial-deploy-containers).
+* This application is ready to be Dockerized and run in a container. For steps, see [Python in containers](https://code.visualstudio.com/docs/containers/quickstart-python).
 
 To run the sample:
 
 1. In VS Code Terminal, run `python -m venv env` to create a virtual environment as described in the tutorial.
 2. Press Ctrl + Shift + P and run command `Python: Select Interpreter`.
-3. From Run and Debug section, select `Python: Flask` task and hit F5.
+3. Activate the virtual environment by running `source env/bin/activate` (Linux/MacOS) or `env/scripts/activate` (Windows).
+4. In terminal, run `pip install django`.
+5. From Run and Debug section, select `Python: Flask` task and hit F5.
 
 ## Contributing
 
