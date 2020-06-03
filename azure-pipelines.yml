@@ -7,11 +7,11 @@ trigger:
 - master
 
 pool:
-  vmImage: 'ubuntu-latest'
+  vmImage: 'ubuntu-16.04'
 strategy:
-  matrix:
-    Python37:
-      python.version: '3.7'
+    matrix:
+      Python36:
+        python.version: '3.6'
 
 steps:
 - task: UsePythonVersion@0
@@ -19,8 +19,10 @@ steps:
     versionSpec: '$(python.version)'
   displayName: 'Use Python $(python.version)'
 
+- script: python -m pip install --upgrade pip setuptools wheel
+  displayName: 'Install tools'
+
 - script: |
-    pip install -U pip setuptools wheel
     pip install -r requirements.txt
   displayName: 'Install dependencies'
 
