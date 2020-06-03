@@ -27,3 +27,8 @@ steps:
   displayName: 'Install dependencies'
 
 - script: python startup.py
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    ArtifactName: 'drop'
+    publishLocation: 'Container'
