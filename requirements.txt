@@ -3,5 +3,5 @@ Flask==1.0.2
 setuptools==45
 itsdangerous==0.24
 Jinja2==2.10
-MarkupSafe==1.0
+MarkupSafe==1.1.1
 Werkzeug==0.15.3
