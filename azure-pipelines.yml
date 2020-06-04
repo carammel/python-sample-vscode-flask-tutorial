@@ -25,10 +25,16 @@ steps:
 - script: |
     pip install -r requirements.txt
   displayName: 'Install dependencies'
-
-- script: python startup.py
+- task: BuildSDist@1
+  inputs:
+    setuppy: 'setup.py'
+    outputdir: '$(Build.ArtifactStagingDirectory)'
 - task: PublishBuildArtifacts@1
   inputs:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
     ArtifactName: 'drop'
     publishLocation: 'Container'
+- task: BuildWheel@1
+  inputs:
+    setuppy: 'setup.py'
+
